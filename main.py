@@ -46,8 +46,8 @@ def run(chart_path: str, advance: float):
 
     ctl.tap(device_size[0] // 2, device_size[1] // 2)
 
-    ctl.lock.acquire()
-    ctl.stop_streaming()
+    # ctl.lock.acquire()
+    # ctl.stop_streaming()
     print('[client] INFO: 自动打歌已启动')
 
     start_time = time.time() - advance
@@ -119,11 +119,11 @@ def ask_for_chart() -> str:
 
 def welcome():
     # 如果您修改本程序或本程序的源代码，则默认您同意下面的协定：
-    print('您因使用或修改本程序发生的一切后果将由您自己承担而与程序原作者无关。')
-    print('您是否同意这个协定？')
-    accept = input('如果同意，请输入"同意"并回车，否则输入其他一切的内容将被视为不同意: ')
-    if accept != '同意':
-        exit()
+    # print('您因使用或修改本程序发生的一切后果将由您自己承担而与程序原作者无关。')
+    # print('您是否同意这个协定？')
+    # accept = input('如果同意，请输入"同意"并回车，否则输入其他一切的内容将被视为不同意: ')
+    # if accept != '同意':
+    #     exit()
     print('''欢迎使用phisap - PHIgros Semi-Auto Player
     
     注意：由于一些限制，目前并不能保证任意一首曲目在每次由本程序

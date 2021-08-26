@@ -19,16 +19,8 @@
    2. 在计算机上执行命令`adb shell pm path com.PigeonGames.Phigros`，该命令会打印出安装包的路径。
    3. 记上一步得到的路径为`<pkgpath>`(`package:`之后的内容)，执行命令`adb pull <pkgpath> <storage path>`。则安装包将保存到`<storage path>`下（`<storage path>`由您自己指定）。
 4. 初始化谱面库：请执行`python extract.py`，输入上一步安装包的路径或将安装包拖入程序窗口后回车。将谱面数据从安装包中提取出来。
-5. 准备服务端。以下操作二选一。
-   1. 如果您的游戏设备为`aarch64`架构，那么可以尝试从[releases](https://github.com/kvarenzn/phisap/releases/) 下载预编译的服务端，并放置在`server/`下。
-   2. 如果不是，请按照如下步骤自行编译
-      1. **请确保Android NDK已经安装并正确配置**，下一步需要依赖这一步的配置。至于如何配置请参考百度或谷歌。
-      2. 编译服务端：请选择下面两项中的一项执行
-         1. 如果您的计算机中有`make`命令，请`cd server/`，之后再`make build install`。
-         2. 否则，请
-            1. 使用`Android Studio`打开`server/`并编译，或者`cd server/`之后`./gradlew -p . assembleRelease`。
-            2. 找到编译出的apk文件，一般在`server/build/outputs/apk/release/server-release-unsigned.apk`，请手动将它移动到`server/`并重命名为`phisap-server`。
-
+5. 准备服务端。请从[这里](https://github.com/Genymobile/scrcpy/releases) 下载scrcpy的最新版服务端（`scrcpy-server-v1.18`），重命名为`scrcpy-server`并放置到项目根目录下（本文件所在的目录）。
+   
 ### 运行
 ```bash
 python main.py
@@ -45,8 +37,8 @@ python main.py
 
 
 ## 致谢
-+ `control.py`和`server/`中的大部分代码参考自[Genymobile/scrcpy](https://github.com/Genymobile/scrcpy) ，并使用`python`和`kotlin`语言重写。
-+ `catalog.py`和`extract.py`中的代码参考自[Perfare/AssetStudio](https://github.com/Perfare/AssetStudio) ，并使用`python`语言重写。
++ `control.py`中的大部分代码参考自[Genymobile/scrcpy](https://github.com/Genymobile/scrcpy) 。
++ `catalog.py`和`extract.py`中的代码参考自[Perfare/AssetStudio](https://github.com/Perfare/AssetStudio) 。
 + 谱面解析算法参考自[0thElement/PhiCharter](https://github.com/0thElement/PhiCharter) 。
 
 感谢上述优秀的项目和创造或维护它们的个人或企业。
