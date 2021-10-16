@@ -29,10 +29,11 @@
 0. **本程序不支持3.9.0以下的Python，请确保您计算机中安装的Python符合此要求。**
 1. 请安装`requirements.txt`中的全部依赖（使用`pip install -r requirements.txt`）。
 2. 请确保`adb`命令在`PATH`变量中。如果没有请下载安装并配置`PATH`变量。
-3. 请准备Phigros的安装包，目前支持v1.6.9至v1.6.11。如果您的安卓/鸿蒙设备中已经安装有Phigros,则可以依照下面的方法提取：
+3. 请准备Phigros的安装包，目前支持v1.6.9至v1.6.11。如果您的安卓/鸿蒙设备中已经安装有Phigros,则可以依照下面的方法提取【进入根目录需要ROOT，请注意您的设备是否已经获得ROOT权限】：
    1. 将设备连接到安装有`adb`的计算机，且确保设备已开启USB调试模式，且已授权计算机进行调试。
    2. 在计算机上执行命令`adb shell pm path com.PigeonGames.Phigros`，该命令会打印出安装包的路径。
    3. 记上一步得到的路径为`<pkgpath>`(`package:`之后的内容)，执行命令`adb pull <pkgpath> <storage path>`。则安装包将保存到`<storage path>`下（`<storage path>`由您自己指定）。
+   4. 如果您已经通过联系作者获得了安装包，则您可以直接略过这一步。
 4. 初始化谱面库：请执行`python extract.py`，输入上一步安装包的路径或将安装包拖入程序窗口后回车。将谱面数据从安装包中提取出来。
 5. 准备服务端。以下操作二选一。
    1. 如果您的游戏设备为`aarch64`架构，那么可以尝试从[releases](https://github.com/kvarenzn/phisap/releases/) 下载预编译的服务端，并放置在`server/`下。
